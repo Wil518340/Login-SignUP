@@ -1,3 +1,7 @@
+This is the login and sign up draft.
+
+Below is the plugs needs to be install in order to use emailJS.
+
 Install EmailJS SDK using npm $ npm install --save @emailjs/browser
 
 Install the SDK via Yarn $ yarn add @emailjs/browser
