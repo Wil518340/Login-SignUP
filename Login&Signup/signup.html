@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Check</title>
+    <link rel="icon" href="title_icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="signup.css">
+    <script src="signup.js" defer></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("GxFJE9sS0j4NAiIqq");
+        })();
+    </script>
+</head>
+<body>
+    <div class="form">
+        <h1>Authentication Check</h1>
+        <input type="email" id="email_id" placeholder="Enter Email" onchange="saveInputValue('email_id')" required>
+        <div class="input-group">
+            <input class="verify" type="text" id="full_name" placeholder="Enter Name" onchange="saveInputValue('full_name')" required>
+            <button class="btn" onclick="sendOTP()">Send Code</button>
+        </div>
+        <div class="input-group">
+            <input class="verify" type="text" id="verify" placeholder="Enter the Verify Code">
+            <button class="btn" id="otp-btn">Verify</button>
+        </div>
+        <div class="input-group">
+            <input class="verify" type="password" id="password" placeholder="Enter Password" required>
+            <button class="btn" type="button" onclick="togglePasswordVisibility('password', this)">
+                <i class="far fa-eye"></i>
+            </button>
+        </div>
+        <div class="input-group">
+            <input class="verify" type="password" id="confirm_password" placeholder="Confirm Password" required>
+            <button class="btn" type="button" onclick="togglePasswordVisibility('confirm_password', this)">
+                <i class="far fa-eye"></i>
+            </button>
+        </div>
+        <div>
+            <button class="btn" onclick="validatePassword()">Validate Password</button>
+        </div>
+		<br>
+        <div>
+            <button class="btn" onclick="location.href='login.html'">Go to Login</button>
+        </div>
+    </div>
+</body>
+</html>
